@@ -4,7 +4,7 @@ import argparse, re, sys
 def detect(fields):
     result = [None] * len(fields)
     for i, f in enumerate(fields):
-        result[i] = False if re.match("^-?[0-9]+$", f) else True
+        result[i] = False if re.match(r"""^(-)?[0-9]+(\.[0-9]+)?|.$""", f) else True
     return result
 
 def detectMerge(fields, flags):
