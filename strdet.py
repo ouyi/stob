@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse, re, sys
+import fileinput
 
 def detect(fields):
     result = [None] * len(fields)
@@ -22,20 +23,19 @@ strdet (string detector) detects for the input structured text file the indexes 
         """)
 
     parser.add_argument("-d", "--delimiter", default="\t", help="delimiter for splitting the line into fields")
-    parser.add_argument("inputfile", help="the input file")
+    parser.add_argument("filename", help="the input file")
     args = parser.parse_args()
 
     delimiter = None if not args.delimiter else args.delimiter.decode('string_escape')
 
     flags = None
-    with open(args.inputfile) as inputfile:
-        for line in inputfile:
-            fields = line.rstrip().split(delimiter)
-            try:
-                flags = detect(fields) if not flags else detectMerge(fields, flags)
-            except ValueError:
-                print >> sys.stderr, fields
-                print >> sys.stderr, flags
+    for line in fileinput.input(args.filename):
+        fields = line.rstrip().split(delimiter)
+        try:
+            flags = detect(fields) if not flags else detectMerge(fields, flags)
+        except ValueError:
+            print >> sys.stderr, fields
+            print >> sys.stderr, flags
 
     for i, flag in enumerate(flags):
         if flag:
