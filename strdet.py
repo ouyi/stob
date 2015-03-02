@@ -26,7 +26,7 @@ strdet (string detector) detects for the input structured text file the indexes 
     parser.add_argument("filename", help="the input file")
     args = parser.parse_args()
 
-    delimiter = None if not args.delimiter else args.delimiter.decode('string_escape')
+    delimiter = args.delimiter.decode('string_escape')
 
     flags = None
     for line in fileinput.input(args.filename):
