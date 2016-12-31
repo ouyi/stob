@@ -1,5 +1,7 @@
 # stob -- structured text obfuscator
 
+[![Build Status](https://travis-ci.org/ouyi/stob.svg?branch=master)](https://travis-ci.org/ouyi/stob)
+
 ## Overview 
 
 Stob is a tool for obfuscating structured text files, e.g., tsv or csv files.
