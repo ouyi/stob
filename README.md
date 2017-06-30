@@ -1,6 +1,6 @@
-# stob -- structured text obfuscator
-
 [![Build Status](https://travis-ci.org/ouyi/stob.svg?branch=master)](https://travis-ci.org/ouyi/stob)
+
+# stob -- structured text obfuscator
 
 ## Overview 
 
