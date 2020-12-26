@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ouyi/stob.svg?branch=master)](https://travis-ci.org/ouyi/stob)
+![Build Status](https://github.com/ouyi/stob/workflows/main/badge.svg)
 
 # stob -- structured text obfuscator
 
