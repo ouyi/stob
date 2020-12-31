@@ -1,3 +1,5 @@
+# cat .github/workflows/main.yml | yq -I4 e '.' -
+
 name: main
 on: push
 
