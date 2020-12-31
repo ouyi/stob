@@ -11,6 +11,7 @@ class LobTests(unittest.TestCase):
         s = ["abcdefg"]
         o = obfuscate(s)
         self.failUnless( len(s) == len(o) )
+        self.failUnless( s[0] != o[0] )
 
     def test_obfuscate_multi_elem(self):
         s = ["abcdefg", "opq"]
