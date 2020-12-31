@@ -9,7 +9,7 @@ Those text files are structured such that each line can be splitted into a
 constant number of fields using the same delimiter. The tool replaces each
 specified field by a random string of the same length as the original field.
 
-## Usage example
+## Usage examples
 
 ### Input file
 
@@ -30,7 +30,7 @@ specified field by a random string of the same length as the original field.
     $ ./strdet.py -d, test.txt
     0 1 
 
-### The above example combined
+### The above examples combined
 
     $ ./stob.py test.txt -d, -f $(./strdet.py -d, test.txt)
     ot,a,3
