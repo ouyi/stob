@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from lob import * 
+from lob import *
 import unittest
 
 class LobTests(unittest.TestCase):

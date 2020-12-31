@@ -15,12 +15,12 @@ def obfuscate(fields, indexes = None):
     return result
 
 def convert(line, delimiter, indexes):
-    fields = [line] if not delimiter else line.split(delimiter) 
+    fields = [line] if not delimiter else line.split(delimiter)
     obfuscated = obfuscate(fields, indexes)
     return ('' if not delimiter else delimiter).join(obfuscated)
 
 def main():
-    parser = argparse.ArgumentParser(description="""lob = lineobfuscator 
+    parser = argparse.ArgumentParser(description="""lob = lineobfuscator
     replaces each field of the input line by a random string of the same length as the original field.
         """)
     parser.add_argument("-d", "--delimiter", help="delimiter for splitting the line into fields")
@@ -32,7 +32,7 @@ def main():
         random.seed(args.seed)
     delimiter = None if not args.delimiter else args.delimiter.decode('string_escape')
     line = sys.stdin.readline()
-    print convert(line.rstrip(), delimiter, args.fields) 
+    print convert(line.strip(), delimiter, args.fields)
 
 if __name__ == "__main__":
     main()

@@ -12,7 +12,7 @@ def detectMerge(fields, flags):
     if len(flags) != len(fields):
         raise ValueError("illegal arguments: {} != {}".format(fields, flags))
 
-    result = detect(fields) 
+    result = detect(fields)
     for i, f in enumerate(flags):
         result[i] = f or result[i]
     return result
@@ -30,7 +30,7 @@ strdet (string detector) detects for the input structured text file the indexes 
 
     flags = None
     for line in fileinput.input(args.filename):
-        fields = line.rstrip().split(delimiter)
+        fields = line.strip().split(delimiter)
         try:
             flags = detect(fields) if not flags else detectMerge(fields, flags)
         except ValueError:

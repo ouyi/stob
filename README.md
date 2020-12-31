@@ -2,7 +2,7 @@
 
 # stob -- structured text obfuscator
 
-## Overview 
+## Overview
 
 Stob is a tool for obfuscating structured text files, e.g., tsv or csv files.
 Those text files are structured such that each line can be splitted into a
@@ -28,7 +28,7 @@ specified field by a random string of the same length as the original field.
 ### The index of the non-nummeric columns can be detected using the included strdet.py script
 
     $ ./strdet.py -d, test.txt
-    0 1 
+    0 1
 
 ### The above examples combined
 
